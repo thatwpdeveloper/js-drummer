@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+}
+
+// add variables
+// add mixin like px 2 rem, border radius
+
+
+@import 'functions';
+@import 'mixins';
+@import 'variables';
+
+body {
+  background-color: $yellow;
+  font-family: $font-stack;
+  font-size: px-to-rem(16px);
+  font-weight: 300;
+}
+
+h1 {
+  font-size: px-to-rem(64px);
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-weight: 300;
+}
+
+
+.container {
+  @include clearfix();
+  margin: 0 auto;
+  max-width: px-to-rem(960px);
+  padding-left: px-to-rem(16px);
+  padding-right: px-to-rem(16px);
+  width: 100%;
+}
+
+.key {
+  background-color: $black;
+  border: 0;
+  color: $white;
+  float: left;
+  height: px-to-rem(100px);
+  margin-bottom: px-to-rem(32px);
+  margin-right: px-to-rem(32px);
+  overflow: hidden;
+  padding: px-to-rem(16px);
+  position: relative;
+  text-align: center;
+  width: px-to-rem(100px);
+  @include border-radius(px-to-rem(40px));
+  @include transition(all .1s ease);
+
+
+  &:after {
+    background-color: transparent;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  kbd {
+    font-family: $font-stack;
+    font-size: px-to-rem(40px);
+  }
+
+  span {
+    display: block;
+  }
+
+  &.playing {
+    background-color: $yellow-dark;
+    @include transform(scale(1.1));
+  }
+}
