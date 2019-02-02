@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  background-color: $yellow;
+  font-family: $font-stack;
+  font-size: px-to-rem(16px);
+  font-weight: 300;
+}
+
+.container {
+  @include clearfix();
+  margin: 0 auto;
+  max-width: px-to-rem(960px);
+  padding-left: px-to-rem(16px);
+  padding-right: px-to-rem(16px);
+  width: 100%;
+}
